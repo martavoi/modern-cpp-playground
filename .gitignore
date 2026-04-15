@@ -1,1 +1,5 @@
 .worktrees/
+build/
+build_review/
+.cache/
+.DS_Store

@@ -1,0 +1,3 @@
+add_executable(concepts_demo main.cpp)
+target_compile_features(concepts_demo PRIVATE cxx_std_20)
+set_target_properties(concepts_demo PROPERTIES CXX_EXTENSIONS OFF)
