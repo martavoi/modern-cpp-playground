@@ -39,6 +39,19 @@
       "externalConsole": false,
       "MIMode": "lldb",
       "preLaunchTask": "Build cpp26_demo"
+    },
+    {
+      "name": "Debug print_demo",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/src/print_demo/print_demo",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build print_demo"
     }
   ]
 }

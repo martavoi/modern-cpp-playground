@@ -69,6 +69,21 @@
         "isDefault": false
       },
       "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build print_demo",
+      "type": "shell",
+      "command": "cmake --build build --target print_demo",
+      "dependsOn": ["Configure"],
+      "dependsOrder": "sequence",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$gcc"]
     }
   ]
 }
