@@ -1,3 +1,3 @@
 add_executable(jthread_demo main.cpp)
-target_compile_features(jthread_demo PRIVATE cxx_std_20)
+target_compile_features(jthread_demo PRIVATE cxx_std_23)
 set_target_properties(jthread_demo PROPERTIES CXX_EXTENSIONS OFF)

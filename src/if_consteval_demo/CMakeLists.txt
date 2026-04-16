@@ -1,0 +1,3 @@
+add_executable(if_consteval_demo main.cpp)
+target_compile_features(if_consteval_demo PRIVATE cxx_std_23)
+set_target_properties(if_consteval_demo PROPERTIES CXX_EXTENSIONS OFF)

@@ -1,0 +1,3 @@
+add_executable(optional_demo main.cpp)
+target_compile_features(optional_demo PRIVATE cxx_std_23)
+set_target_properties(optional_demo PROPERTIES CXX_EXTENSIONS OFF)

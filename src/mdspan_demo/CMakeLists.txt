@@ -1,0 +1,3 @@
+add_executable(mdspan_demo main.cpp)
+target_compile_features(mdspan_demo PRIVATE cxx_std_23)
+set_target_properties(mdspan_demo PROPERTIES CXX_EXTENSIONS OFF)

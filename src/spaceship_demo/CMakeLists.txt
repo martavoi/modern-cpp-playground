@@ -1,3 +1,3 @@
 add_executable(spaceship_demo main.cpp)
-target_compile_features(spaceship_demo PRIVATE cxx_std_20)
+target_compile_features(spaceship_demo PRIVATE cxx_std_23)
 set_target_properties(spaceship_demo PROPERTIES CXX_EXTENSIONS OFF)

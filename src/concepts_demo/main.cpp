@@ -2,34 +2,38 @@
  * @file main.cpp
  * @brief Demo: C++20 concepts constraining a function template.
  *
- * A @e concept is a named boolean constraint on types. Here `Squarable`
- * requires that `value * value` exists and has the same type as `T`.
- * `square` only accepts types satisfying that concept, so misuse is a
- * clear compile error instead of a long template instantiation diagnostic.
+ * A @e concept is a named boolean constraint on types. `Squarable` asks that
+ * `value * value` is well-formed and its type is `T`. The explicit template
+ * form and the abbreviated `Squarable auto` parameter are equivalent — the
+ * latter keeps the constraint right next to the parameter. Misuse becomes a
+ * short, readable error rather than a wall of template instantiations.
  *
  * Build: `cmake --build <build-dir> --target concepts_demo`
  * Run:   `<build-dir>/src/concepts_demo/concepts_demo`
  */
 
 #include <concepts>
-#include <iostream>
-#include <string>
+#include <print>
 
-/** Requires `T` to support multiplication with itself yielding `T`. */
 template <typename T>
 concept Squarable = requires(T value) {
   { value * value } -> std::same_as<T>;
 };
 
-/** Returns `value * value` for any @ref Squarable type. */
 template <Squarable T>
-auto square(T value) -> T {
+T square_explicit(T value) {
+  return value * value;
+}
+
+auto square_abbreviated(Squarable auto value) {
   return value * value;
 }
 
 int main() {
-  std::cout << "square(12) = " << square(12) << '\n';
-  std::cout << "square(1.5) = " << square(1.5) << '\n';
-  // `std::string` is not Squarable: `square(std::string{"hello"});` will not compile.
+  std::println("square_explicit(12)    = {}", square_explicit(12));
+  std::println("square_abbreviated(12) = {}", square_abbreviated(12));
+  std::println("square_explicit(1.5)   = {}", square_explicit(1.5));
+  std::println("square_abbreviated(1.5)= {}", square_abbreviated(1.5));
+  // Not Squarable: square_*(std::string{"hello"}) would fail to compile.
   return 0;
 }

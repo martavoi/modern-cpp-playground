@@ -1,0 +1,3 @@
+add_executable(latch_barrier_demo main.cpp)
+target_compile_features(latch_barrier_demo PRIVATE cxx_std_23)
+set_target_properties(latch_barrier_demo PROPERTIES CXX_EXTENSIONS OFF)
