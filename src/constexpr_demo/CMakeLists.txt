@@ -1,0 +1,3 @@
+add_executable(constexpr_demo main.cpp)
+target_compile_features(constexpr_demo PRIVATE cxx_std_20)
+set_target_properties(constexpr_demo PROPERTIES CXX_EXTENSIONS OFF)
