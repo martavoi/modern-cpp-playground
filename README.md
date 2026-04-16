@@ -7,7 +7,7 @@ Small CMake project with four standalone demos for modern C++ features.
 - `ranges_demo`: a small ranges pipeline over integers
 - `concepts_demo`: a small custom concept constraining a function template
 - `cpp26_demo`: structured binding declaration as a condition
-- `print_demo`: a tiny `std::println` example using `<print>`
+- `print_demo`: `std::println` from `<print>` and `std::format` from `<format>`
 
 ## Requirements
 
@@ -61,3 +61,4 @@ Expected output:
 - `Could not parse input`
 - `Hello from print_demo`
 - `2 + 3 = 5`
+- `hex 255 = 0xff, padded = 0007`
