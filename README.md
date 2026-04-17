@@ -22,6 +22,7 @@ target and runnable by itself.
 | `chrono_demo`     | C++20/23 | `<chrono>` calendar types, duration arithmetic, `hh_mm_ss`, and format specifiers               |
 | `if_consteval_demo` | C++23  | `if consteval` dispatch: Newton's method at compile time, `std::sqrt` at runtime                |
 | `latch_barrier_demo` | C++20 | `std::latch` as a start gun + `std::barrier` for per-phase rendezvous with a completion function|
+| `coroutine_demo`  | C++20    | Manual `co_yield` generator (same promise shape as `std::generator`) + `co_return` / `co_await` task with a `promise_type` fed by caller `shared_ptr` |
 
 ## Requirements
 
@@ -59,6 +60,7 @@ cmake --build build --target ranges_demo
 ./build/src/chrono_demo/chrono_demo
 ./build/src/if_consteval_demo/if_consteval_demo
 ./build/src/latch_barrier_demo/latch_barrier_demo
+./build/src/coroutine_demo/coroutine_demo
 ```
 
 ## Expected output
@@ -162,6 +164,14 @@ main: 4 workers waiting at the start line
 phase 0 done: partials=[1, 2, 3, 4] sum=10
 phase 1 done: partials=[2, 4, 6, 8] sum=20
 phase 2 done: partials=[3, 6, 9, 12] sum=30
+
+# coroutine_demo
+--- generator (co_yield; manual promise / std::generator shape) ---
+first 10 Fibonacci: 0 1 1 2 3 5 8 13 21 34 
+--- custom promise: co_return (result via shared slot) ---
+make_forty_two -> 42
+--- custom promise: co_await + co_return ---
+make_via_await -> 56
 ```
 
 ## Clean verification
@@ -172,7 +182,7 @@ cmake --build build
 for t in ranges_demo concepts_demo if_init_demo print_demo spaceship_demo \
          constexpr_demo jthread_demo expected_demo optional_demo \
          span_demo mdspan_demo chrono_demo if_consteval_demo \
-         latch_barrier_demo; do
+         latch_barrier_demo coroutine_demo; do
   echo "== $t ==" && ./build/src/$t/$t
 done
 ```
