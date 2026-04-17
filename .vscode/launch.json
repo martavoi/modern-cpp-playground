@@ -28,17 +28,17 @@
       "preLaunchTask": "Build concepts_demo"
     },
     {
-      "name": "Debug cpp26_demo",
+      "name": "Debug if_init_demo",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/src/cpp26_demo/cpp26_demo",
+      "program": "${workspaceFolder}/build/src/if_init_demo/if_init_demo",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
-      "preLaunchTask": "Build cpp26_demo"
+      "preLaunchTask": "Build if_init_demo"
     },
     {
       "name": "Debug print_demo",

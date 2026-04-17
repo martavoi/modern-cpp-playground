@@ -8,8 +8,8 @@
  * it selects the branch, while `value` and `error` stay in scope for both
  * branches of the `if`.
  *
- * Build: `cmake --build <build-dir> --target cpp26_demo`
- * Run:   `<build-dir>/src/cpp26_demo/cpp26_demo`
+ * Build: `cmake --build <build-dir> --target if_init_demo`
+ * Run:   `<build-dir>/src/if_init_demo/if_init_demo`
  */
 
 #include <print>

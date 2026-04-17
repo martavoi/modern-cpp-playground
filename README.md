@@ -10,7 +10,7 @@ target and runnable by itself.
 | ----------------- | -------- | ----------------------------------------------------------------------------------------------- |
 | `ranges_demo`     | C++20/23 | Lazy `views::filter`/`views::transform`, then `std::ranges::to` and `std::ranges::fold_left`    |
 | `concepts_demo`   | C++20    | Named `concept`; explicit template and abbreviated `Squarable auto` forms                       |
-| `cpp26_demo`      | C++17    | Structured-binding declaration as an `if` initializer                                           |
+| `if_init_demo`    | C++17    | Structured-binding declaration as an `if` initializer                                           |
 | `print_demo`      | C++23    | `std::println` / `std::format`, plus a custom `std::formatter<Color>` with its own spec         |
 | `spaceship_demo`  | C++20    | Defaulted `operator<=>` with `static_assert`-checked orderings                                  |
 | `constexpr_demo`  | C++20    | Tiny `constexpr` HTTP-style router with `consteval` validation; no dispatch-time allocations    |
@@ -47,7 +47,7 @@ cmake --build build --target ranges_demo
 ```bash
 ./build/src/ranges_demo/ranges_demo
 ./build/src/concepts_demo/concepts_demo
-./build/src/cpp26_demo/cpp26_demo
+./build/src/if_init_demo/if_init_demo
 ./build/src/print_demo/print_demo
 ./build/src/spaceship_demo/spaceship_demo
 ./build/src/constexpr_demo/constexpr_demo
@@ -75,7 +75,7 @@ square_abbreviated(12) = 144
 square_explicit(1.5)   = 2.25
 square_abbreviated(1.5)= 2.25
 
-# cpp26_demo
+# if_init_demo
 parse_digit("7") -> 7
 parse_digit("no") failed: input is not a single character
 parse_digit("x") failed: character is not a decimal digit
@@ -169,7 +169,7 @@ phase 2 done: partials=[3, 6, 9, 12] sum=30
 ```bash
 rm -rf build && cmake -S . -B build
 cmake --build build
-for t in ranges_demo concepts_demo cpp26_demo print_demo spaceship_demo \
+for t in ranges_demo concepts_demo if_init_demo print_demo spaceship_demo \
          constexpr_demo jthread_demo expected_demo optional_demo \
          span_demo mdspan_demo chrono_demo if_consteval_demo \
          latch_barrier_demo; do

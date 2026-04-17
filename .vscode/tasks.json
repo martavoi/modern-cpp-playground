@@ -56,9 +56,9 @@
       "problemMatcher": ["$gcc"]
     },
     {
-      "label": "Build cpp26_demo",
+      "label": "Build if_init_demo",
       "type": "shell",
-      "command": "cmake --build build --target cpp26_demo",
+      "command": "cmake --build build --target if_init_demo",
       "dependsOn": ["Configure"],
       "dependsOrder": "sequence",
       "options": {
